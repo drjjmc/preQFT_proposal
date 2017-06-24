@@ -1,0 +1,779 @@
+\documentclass[12pt]{amsart}
+\usepackage[margin=2.10cm,footskip=1.5cm]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\usepackage[nouppercase]{scrpage2}
+\usepackage{hyperref}
+\geometry{a4paper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{enumitem}
+\usepackage{array}
+
+
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\def\Neq8{\mathcal{N}=8}
+
+
+%\author{}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+
+
+
+\begin{center}
+\large{\textbf{ERC Starting Grant 2014\\
+Research proposal [Part B1] }
+}
+\vskip1cm
+
+\LARGE{{Strategic Predictions for Quantum Field Theories}}
+\vskip.5cm
+
+\LARGE{{preQFT}}
+
+
+\vskip1cm
+
+\end{center}
+
+\pagestyle{myheadings}
+\markright{\hfill {\bf Carrasco}\hfill preQFT\hfill Part B1\hfill}
+\markleft{\hfill {\bf Carrasco}\hfill preQFT\hfill Part B1\hfill}
+
+
+\noindent{\bf
+Cover Page:}\\
+-\hskip.75cm John Joseph Carrasco\\
+-\hskip.75cm CEA-Saclay\\
+-\hskip.75cm 60 months\\
+
+
+ \noindent{ Ambitious Questions:}
+\begin{itemize}
+\item { How does the relatively calm macroscopic universe survive and emerge from the violent quantum fluctuations of its underlying microphysics? }
+\item { How do classical notions of space and time emerge from fundamental principles, and what governs their evolution? }
+\end{itemize}  These questions are difficult to answer---perhaps impossible given current ideas and frameworks---but I believe a strategic path forward is to thoroughly understand the quantum predictions of our Yang-Mills and Gravity theories, and unambiguously identify their non-perturbative  completions.   The first step forward, and the goal of this project, is to move towards the trivialization of perturbative calculations.  
+
+Consider the notion of {\it failure-point calculations} --  calculations that push modern methods and world-class technologies to their breaking-point.  Such calculations, for their very success, engender the chance of cultivating and exploiting previously unappreciated structure.  In doing so, such calculations advance the state of the art forward to some degree, dependent on the class of the problems and nature of the solution.  With amplitude calculations, we battle against (naive) combinatorial complexity as we go either higher in order of quantum correction ({\it loop order}), or higher in number of external particles scattering ({\it multiplicity}), so our advances must be revolutionary to lift us forward.  Yet I and others have shown that the very complications of generalized gauge freedom promise a potential salvation at least as powerful as the complications that confront us.   The potential reward is enormous, a rewriting of perturbative quantum field theory to make these principles manifest and calculation natural, an ambitious but now realistic goal.  The path forward is optimized through strategic calculations. 
+ 
+\clearpage
+\noindent{\textbf{ Section a: \underline{\textit{Extended Synopsis of the scientific proposal (max. 5 pages)}}}\\
+
+The state of the art in Standard-Model scattering calculations involving the gluonic sector is at the first quantum correction to semi-classical predictions, and these calculations can be horrendously complicated.  String theory has the promise to be a full (UV-complete) theory of quantum gravity, yet with traditional methods we can hardly calculate more than a handful of the first quantum corrections  in the $\alpha' \to 0$ (point-like) limit for anything but the most (super)-symmetric non-trivial theories.  Yet when we do manage to arrive at a prediction -- pushing through the complex intermediary steps -- we find simplicity.   On-shell methods, some pioneered by me with collaborators (see e.g.~\cite{Carrasco:2011hw} and refs. therein), have cracked open the higher-loop (higher-order in quantum corrections) barrier in the most supersymmetric theories, demonstrating a richer universal {\em algorithmic} structure than we ever expected -- independent of supersymmetry -- and tantalizing us with the possibility of rewriting QFT to make this structure manifest.  So this is my goal: I aim to solve the prediction problem in Yang-Mills and Gravity theories, learning from explicit calculation how to tease out the structure we know they possess, and ultimately to identify the mathematical language most conducive to discovering --- through analytic derivation --- the implications of their underlying principles.   This program will require and engender new techniques, new ideas, and new principles.
+
+ I will save motivating the particular value of supergravity calculations, and the exciting possibility of perturbative finiteness for ${\mathcal N}>5$ supergravities, until the full scientific proposal where I have room to set the stage.  Here I will rely on the innate appeal of solid clarifying calculations in relevant theories on the edge of being tractable.  The work I propose here is quite-literally groundbreaking.  I propose to carry out calculations that nobody has ever attempted in gauge or gravity theories -- calculations that many believed were absolutely impossible, until the recent multi-loop amplitudes revolution, of which I have been a key player.  Yet these very calculations promise to teach us about fundamental principles hidden in our most foundational theories.
+
+{\bf Technical Simplicity but Universal Structure.}  Besides the improved UV behavior, many of the  calculations I  discuss  involve supersymmetry because the associated technical simplicity allows the faster collection of data with less effort. The goal is to find universal structure independent of supersymmetry.  The pattern is to identify properties first in maximally supersymmetric theories, then consider theories with less supersymmetry or none (cf.~\cite{Carrasco:2012ca}).
+
+{\bf Empirical Relevance.} Many of these ideas resonate and have direct application in the understanding of Yang-Mills theory for which, through QCD-scale experiment, and  soon optical simulations, we have a wealth of data available.   Indeed a valuable benefit of this line of investigation is the furthering development of calculational techniques crucial to predicting the background processes relevant to new-physics discoveries at the LHC and next-generation colliders.   Furthermore, approaches developed in carrying out and analyzing these perturbative calculations have direct applicability to generic perturbative solutions to non-linear equations of motion.  One particularly exciting example, which I mention below, and discuss at length in the fuller proposal, is in the calculation of multi-point correlation functions in the Effective Field Theory of Large Scale Structure -- relevant to decoding the primordial signals of the early universe.  Although it is too early (and too close to the submission of this proposal) to comment carefully and at length on the recently observed $B$-mode graviton signals from BICEP II, one thing is clear.  Upon verification of these $B$-mode observations, theoretic understanding for the implication of this data, through explicit graviton calculations, will be of tremendous significance.
+
+{\bf Computational Advances = Conceptual Advances.} Even though this work is analytic, I must, at key times, employ vast computational resources for symbolic manipulation.  I intend to push the envelop of such  activity with this proposal, which is why I am requesting non-trivial computational resources.  This program can be discussed in terms  of analytic ``Big Data,'' requiring innovation in managing and extracting the critical physical information awash in a sea of generated expressions.
+
+ To set the scales, consider that the tree-amplitude describing $m$ gluons scattering is encoded by $(2m-5)!!$ cubic (trivalent) graphs which represent the various potential routings of momentum and color.  A 14 particle tree amplitude has $3.16\times 10^9$ graphs.   Yet I have shown that one needs only $(m-3)! \sim 4\times10^7$ gauge-invariant expressions~\cite{BCJ} (known as color-stripped or color ordered partial amplitudes).  Why  14-particle interactions? Because it is relevant, via only self-sewing, to the four-particle five-loop correction -- a key  for understanding the ultraviolet behavior of the  ${\mathcal N}=8$ supergravity theory, as I will discuss below.  But intriguingly we find that  ${\mathcal N}=4$ super Yang-Mills, needs only $\sim 500$ graph topologies~\cite{fiveLoopsFull} for five-loops.   This represents a compression of relevant information spanning 7 orders of magnitude, and 9 if the duality I discuss below can be made manifest.  This is exactly the understanding we need to achieve to solve gauge and gravity quantum field theories.  To find the representation for the gravity theory involving either order $10^2$ or order 1 graphs, however, will require the ability to sift through the data encoded at least by the $500$-graph depiction of the gauge theory, if not the $4\times10^7$ graph representation.
+
+The success of this project will be not only new understanding of the language of relativistic quantum scattering but also in the development of tools to handle large-scale analytic data, aiding researchers in identifying meaningful patterns.    The goal, of course, is to extract from this data the correct reformulation obviating the need for such gymnastics.  I will describe an important discovery below which sets the stage, but whose story has arguably only just begun.  
+
+{\bf Gravity from Gauge Theory: Color/Kinematics and Double-copy. } I, along with collaborators Z. Bern and H. Johansson, discovered~\cite{BCJ} it was possible to extract gravity information from gauge theory amplitudes in a very direct way when organized around certain graphs in a particularly constrained form.   The relevant mathematical language is cubic (trivalent) graphs whose vertices, for gauge theories, dually represent the conservation of momentum as well as color.  The constrained gauge theory representation (color-dual or BCJ representation) is one where the kinematic weights of contributing graphs manifest Jacobi identities and vertex antisymmetry just as the color factors of the graphs.  We refer to this as manifesting a duality or correspondence between color and kinematics.  When the gauge theory amplitude is so organized, gravity amplitudes are generated trivially by taking a double copy of the Yang-Mills kinematic factor.  Schematically,
+\[
+{\rm YM} \propto \!\! \! \sum_{g \in {\rm graphs}} \!\!\frac{n(g) c(g)}{p(g)} \Rightarrow
+{\rm GR}\propto \!\!\! \sum_{g \in {\rm graphs}} \!\!\frac{n(g) \tilde{n}(g)}{p(g)},
+\]
+where $n(g)$ are the kinematic numerator factors, $c(g)$ are the color factors, $p(g)$ are the propagators of the graphs given as for a scalar $\phi^3$ theory, and $\tilde{n}(g)$ is simply another copy of the Yang-Mills kinematic factor.   Quite literally gravitons behave like gluons whose perturbative gauge-group structure-constants are the kinematics of gluons.   When the numerators are expressed in terms of color-ordered amplitudes, the venerable and previously mysterious KLT\footnote{ Kawai, Lewellen, and Tye demonstrated~\cite{Kawai:1985xq} in 1985 that gluon amplitudes encode all the information necessary to generate graviton amplitudes at tree level. } relations naturally emerge.
+
+But unlike the KLT relations, which only exist between classical (tree-level) amplitudes, this relationship between kinematic numerators in gauge and gravity theories generalizes seamlessly to quantum (loop-level) corrections at the integrand level.  We have verified this double-copy structure explicitly through four-loops at four-point and through three-loops at five-point in the maximally supersymmetric  theory.  Furthermore, it is possible to confirm these relationships  through a variety of lower-loop calculations in less supersymmetric theories -- including pure Yang-Mills, demonstrating its generality beyond constraints of supersymmetry.   In fact,  a recent paper by Oxburgh and White has argued that to all-loop orders the relevant IR behavior of pure Yang-Mills can be put in a color-kinematic satisfying representation finding that the double-copy matches the well-known IR behavior of Einstein-Gravity.   
+
+{\bf Revolutionizing calculation using hidden structure.} An important consequence is that these relationships between kinematic factors have revolutionized the manner in which we now can calculate finite-color non-planar multi-loop scattering amplitudes in Yang-Mills.  One might  think, based upon Feynman graph techniques, that going to higher-loop orders would  be a losing proposition: the number of graph-topologies increases factorially with loop order.  The discovered algebraic structure between graph numerators, however, drastically changes this landscape, rigidly locking the exploding number of graphs at higher-loops to the correct expression of a  small number of master graphs.  Through all known full  multi-loop  scattering amplitudes in the maximally supersymmetric theory only one non-vanishing graph needs be specified at each order.  The differences between the maximally supersymmetric theories and the pure QCD Yang-Mills contribution can be projected onto the nature and behavior of this finite number of master-numerators~\cite{Carrasco:2012ca}.
+
+ As an immediate tree-level consequence of the color-kinematic duality discussed above,  we found new constraining relations between color-ordered scattering amplitudes that have been used to clarify and prove various representations of the earlier discovered tree-level KLT relations.    Generalizations have  since been found in open string theory and  used to arrive at closed-form expressions for stringy KLT, as well as incredibly fascinating all-multiplicity expressions for open string amplitudes as products of ``motivic MZV amplitudes" that contain the all-order $\alpha'$ information with field-theory amplitudes (see e.g.~\cite{Broedel:2013tta}, and refs.~therein).
+ 
+The computational upshot of all of this is that state of the art calculations of only a few years ago,  such as three-loop four-point scattering amplitudes in the maximally supersymmetric theory, can now be done  on a blackboard.   We can now envision using our vast developed  computational expertise to explore higher loops and greater multiplicity than previously imagined as well as attack theories with less supersymmetry -- along the way answering certain open questions that have intrigued the community for years.   The collection of such data will indeed be valuable, but not simply as an end in and of itself.    There are still many mysteries. 
+
+{\bf When difficulty strikes.}  At present, the only way we know how to establish a loop-level color-kinematic dual form is by solving functional relations.  Of necessity this involves positing an ansatz, elucidating functional constraints, and solving the {\em exact} relations constrained by symmetries and data (ala unitarity cuts) from the theory under consideration.    If the manifest representation is insufficiently close to previous results (via say non-locality, or novel momenta routing) establishing the correct ansatz requires imagination, computational power (to test ideas), and  perseverance.  
+\iffalse
+
+\subsection*{When difficulty strikes:}
+Consider a test example where difficulty impeded progress for two years\footnote{The years were not idle, there are many fruitful avenues of exploration.}.  The problem was to arrive at the color-kinematic duality-satisfying representation for 3-loops in the maximally supersymmetric theory.  We knew non-trivial loop-level representations were possible due to fairly malleable 2-loop results in a certain sector of the gluonic theory with no supersymmetry, yet to announce discovery of loop-level color-kinematics we wanted a representation involving explicit loop-momenta in the numerator, and the first available case should be the third loop-order correction in the technically easist theory.  Even our initial representation of the solution contained much structure --indeed it helped us identify the principle in the first place (but at tree-level).  Yet no matter what we threw at the problem, the nine original graphs encoding the representation failed to satisfy color-kinematics.  It was only upon the inclusion of an additional three entirely non-intuitive external propagator graphs that I could find a solution.  How did I get the idea?  By explicit calculation at four-loops where the UV Behavior relied on incredibly suggestive vacuum graphs--suggesting such external propagators.  
+
+The takeaway is that previously unthinkable approaches can become reasonable when motivated. Conservative strategies tend to succeed
+  Of course I could have saved two years if at the beginning I had an infinite amour tried "everything" -- including crazy graphs.  But these "crazy" graphs only made sense after they were made relevant by investigation.  I am not advocating tremendous computational power to try "everything".  Rather I am requesting significant computational resources to investigate {\it motivated} potential solutions. 
+
+So far we have been able to verify color-kinematic solutions through all gauge-theory amplitudes for generic external particle states to 0 super-symmetry at one-loop.  For special external particle states we have evidence through two-loops at zero supersymmetry.  The consequences of all-multiplicity color-kinematics at tree-level of course promise much much more.
+\fi
+
+{\bf More structure awaits!} Benefiting from the affable form generated by color-kinematic satisfying integrand solutions, through explicit calculation and integration, we have discovered a fascinating pattern in the integrated UV divergences of the maximally supersymmetric gauge and gravity theories.  In the critical dimension (the dimension in which the theory divergences at a given loop level), the subleading-in-color divergence of the gauge theory is exactly the divergence of the gravity theory.   This has been verified through four-loops~\cite{fourLoops}.   Obviously, if such a pattern persists to all loop-orders, the maximally supersymmetric gravity theory would be finite.
+
+ While obviously related to the ability for the gauge theory to take on a color-dual kinematic representation, this hints at a structure beyond color-kinematics.    Color-kinematics operates at the integrand level for local representations. This is clearly a non-local phenomena that involves cancellations between multiple channels post-integration. What is the non-local analogue to local color-kinematics?  This is an entirely open question. 
+ 
+{\bf Concrete strategic questions.}
+ My program is not a vague one of musing upon ``big ideas.''  Rather it is to follow strategic tractable questions,  synthesize the results, and identify the principles they encode. To emphasize this point I list a few such concrete strategic questions, all of  which have definite research problems from entirely open-ended, to those suitable for directed novices. 
+\begin{enumerate}
+\item {\em Loop-level recursion for non-planar theories}.  
+We know through generalized unitarity methods that tree-level data encodes all necessary information (modulo counter terms) for all-loop order quantization.  We know how to access this data algorithmically using cut-construction: the systematic building of off-shell expressions for loop-level amplitudes at the integrand level.  Promoting this to analytic loop-level recursion would in principle allow all-loop order consideration through analysis of tree-level data.  
+\item {\em The ultraviolet behavior of $\Neq8$  supergravity in four-dimensions.}  It is an open question as to how the classical and quantum symmetries of maximally supersymmetric supergravity conspire so as to regulate the high-energy behavior. Are they strong enough to ensure all-order perturbative finiteness? There is mounting evidence that the double-copy structure the gravity theory may be responsible, at least in part, for some of the cancellations observed.  A concrete calculation is the $D$-dimensional full five-loop four-point amplitude.  This confronts the first (surviving) prediction of a deviation from the UV behavior of $\mathcal{N}=4$ super-Yang-Mills related to a possible seven loop divergence in four dimensions. 
+\iffalse
+ A $D$-dimensional five-loop gauge theory calculation would be a herculean task even with our method-of-maximal cuts using current computer hardware.   Our new methods relying on the underlying BCJ structure have brought this within reach.   We have recently calculated the full five-loop amplitude in the Yang-Mills theory.  The next step is to calculate the five-loop $\Neq8$ supergravity amplitude.
+ \fi
+\item {\em Non-local representations for gauge and gravity theories}.  It is clear that if maximally supersymmetric supergravity theory is to make manifest the same UV behavior of the maximally supersymmetric gauge theory at five-loops it can only happen in a non-local representation \cite{fiveLoopsPlanar,fiveLoopsFull}.  A first step towards making this concrete would be to find a non-local integrand representation at three-loops that makes manifest the relationship between the subleasing color but leading UV gauge contribution and the leading UV gravity contribution discussed in the {\bf More structure awaits!}~section above.
+\item {\em The ultraviolet behavior of $\mathcal{N}>4$ supergravity in four dimensions. } The observed UV cancellations in $\mathcal{N}=8$ supergravity { have} had many conjectured explanations.  There is clear evidence that the $U(1)$ anomaly I clarified~\cite{anomaly} with Kallosh, Roiban, and Tseytlin is responsible for the 4-loop divergence~\cite{divNeqFour} in $\mathcal{N}=4$ supergravity.  Such anomalies are not present in the duality groups of higher supergravity theories.  Calculating four-dimensional UV behavior of ${\mathcal{N}}=5$ supergravity  at five-loops is a sharp probe, and should establish predictions for all higher supergravities.
+\item {\em The nature of the kinematic-structure constants underlying the color-dual satisfying representations.}  We have complete understanding in the very limited case of self-duality.  Solution of these theories arguably rests on understanding this more generally. Calculations of additional classical gauge solutions in the color-dual framework,  solutions that double-copy to classical solutions of gravity theories, would be an excellent probe towards identifying the relevant gauge choices.  Among the most exciting classical solutions would be to identify the gauge theory solutions that  generate black-hole solutions via double-copy.  See e.g.~\cite{shock} for a double-copied classical shockwave solution.
+\item {\em The generalization of color-kinematics duality to the Standard-Model.} The imposition of color-kinematics is a fantastically efficient tool for rewriting pure-glue calculations and those theories related by supersymmetry to a minimum number of graphs.  But for non-supersymmetric fermions, even in the adjoint representation, with more than one flavor, there are immediate problems related to generalizing the $(n-3)!$ BCJ relations even at tree-level.  A natural first step would be the parameterization of the dependence on supersymmetric coupling constants for flavors related by supersymmetry, and to break supersymmetry by varying the coupling constant, while generating a continuation of the color-kinematic relations.   This should  generate persistent gauge ambiguity in the double-copied expression -- the key will be identifying the appropriate gauge-fixing strategy through explicit calculation with predictions from the target gravity theory.  An intriguing alternative, but longer-range, is to understand the relationship of arbitrary non-supersymmetric flavor amplitudes in unitarity state-sums as decomposed into constituent SUSY flavor scattering amplitudes as described at tree-level in ref.~\cite{flavorGames}.
+\iffalse
+\item {\em The role of non-perturbative effects in full-color (non-planar) maximal SYM scattering in 4 and 5 dimensions. } The planar limit is protected from non-perturbative interference.  Not so the finite-color sector. Here is an opportunity for deep connection with non-perturbative completions.  Once perturbative calculation around the perturbative saddle-point is trivialized, it will be time to consider perturbative calculations around non-perturbative saddle-points.  Fortunately for ${\mathcal N}=4$ sYM we have predictions from holography as to the nature of instanton corrections.  Calculating around instanton saddle points would be a key first step towards establishing more general and systematic non-perturbative completions, and could allow for tests of ideas of resurgence in an incredibly non-trivial four-dimensional theory. 
+\item {\em The relationship of double-copy structure to holography, and generically on non-flat backgrounds is entirely an open question. }  Double-copy relationships between Yang-Mills and gravity theories seem to be a weak-weak duality that holds in the gauge theory for any number of colors $N_c$.  However, in the case of maximal supersymmetry, in the large-$N_c$ limit, we see a weak-strong duality between Yang-Mills in four dimensions and supergravity in five dimensions.  A first step is the comparing of  Mellin-amplitude predictions (see e.g.~\cite{Mellin} and refs therein) in the flat-space limit of AdS, with tree-level prediction from the boundary ${\mathcal{N}}=4 sYM$ CFT, and the tree-level graviton scattering predictions we know to be the flat-space graviton scattering result.
+\fi
+\item {\em Applications to real-world data.}
+While my drive is primarily formal theory, I find that it is important and clarifying to stay grounded to calculations that at least have the potential to touch real data.  Some of these can be shorter service projects to assist phenomenological colleagues. Others can be ones where I have more of a long-term vested interest like cosmological large scale structure~\cite{eftOfLSS}.  In any case, S-matrix techniques can be applied far and wide to effective theories that touch or have the near-term ability to touch real data of significant consequence. Obviously QCD is one such theory, as already demonstrated by my collaborators who have developed the Blackhat collaboration, as well as theories of inflation and phenomenological quantum gravity so as to extract the maximal amount of information from the recently observed CMB B-mode polarization signals of primordial gravitons.   More surprisingly, perhaps, calculating multiple-point correlation functions in classical stochastic field theories are another~\cite{eftOfLSS} -- and one quite relevant for extracting significant information for precision cosmology. I discuss this further in the detailed proposal of B2.
+
+\end{enumerate}
+
+\begin{thebibliography}{99}
+
+
+\bibitem{Carrasco:2011hw}
+  {\bf J.~J.~M.~Carrasco} and H.~Johansson,
+  ``Generic multiloop methods and application to ${\mathcal{N}}=4$ super-Yang-Mills,''
+  J.\ Phys.\ A {\bf 44} (2011) 454004
+  [arXiv:1103.3298 [hep-th]].
+  %%CITATION = ARXIV:1103.3298;%%
+  %41 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Carrasco:2011mn}
+\bibitem{Carrasco:2012ca}
+    {\bf J.~J.~M.~Carrasco}, M.~Chiodaroli, M.~Günaydin and R.~Roiban,
+  ``One-loop four-point amplitudes in pure and matter-coupled ${\mathcal{N}}\leq 4$ supergravity,''
+  JHEP {\bf 1303} (2013) 056
+  [arXiv:1212.1146 [hep-th]].
+  %%CITATION = ARXIV:1212.1146;%%
+  %18 citations counted in INSPIRE as of 24 Mar 2014
+\bibitem{BCJ}
+  Z.~Bern,   {\bf J.~J.~M.~Carrasco} and H.~Johansson,
+  ``New Relations for Gauge-Theory Amplitudes,''
+  Phys.\ Rev.\ D {\bf 78} (2008) 085011
+  [arXiv:0805.3993 [hep-ph]]. 
+    Z.~Bern,   {\bf J.~J.~M.~Carrasco} and H.~Johansson,
+  ``Perturbative Quantum Gravity as a Double Copy of Gauge Theory,''
+  Phys.\ Rev.\ Lett.\  {\bf 105} (2010) 061602
+  [arXiv:1004.0476 [hep-th]].
+  %\cite{Kawai:1985xq}
+  \bibitem{fiveLoopsFull}
+  Z.~Bern,   {\bf J.~J.~M.~Carrasco}, H.~Johansson and R.~Roiban,
+  ``The Five-Loop Four-Point Amplitude of ${\mathcal{N}}=4$ super-Yang-Mills Theory,''
+  Phys.\ Rev.\ Lett.\  {\bf 109} (2012) 241602
+  [arXiv:1207.6666 [hep-th]].
+\bibitem{Kawai:1985xq}
+  H.~Kawai, D.~C.~Lewellen and S.~H.~H.~Tye,
+  ``A Relation Between Tree Amplitudes of Closed and Open Strings,''
+  Nucl.\ Phys.\ B {\bf 269} (1986) 1.
+  %%CITATION = NUPHA,B269,1;%%
+  %376 citations counted in INSPIRE as of 24 Mar 2014  
+\bibitem{Broedel:2013tta}
+  J.~Broedel, O.~Schlotterer and S.~Stieberger,
+  ``Polylogarithms, Multiple Zeta Values and Superstring Amplitudes,''
+  Fortsch.\ Phys.\  {\bf 61} (2013) 812
+  [arXiv:1304.7267 [hep-th]].
+  %%CITATION = ARXIV:1304.7267;%%
+  %18 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Bern:2012uf}
+\bibitem{fourLoops}
+  Z.~Bern,   {\bf J.~J.~M.~Carrasco}, L.~J.~Dixon, H.~Johansson and R.~Roiban,
+  ``Simplifying Multiloop Integrands and Ultraviolet Divergences of Gauge Theory and Gravity Amplitudes,''
+  Phys.\ Rev.\ D {\bf 85} (2012) 105014
+  [arXiv:1201.5366 [hep-th]].
+  %%CITATION = ARXIV:1201.5366;%%
+  %40 citations counted in INSPIRE as of 24 Mar 2014
+  \bibitem{fiveLoopsPlanar}
+   Z.~Bern,   {\bf J.~J.~M.~Carrasco}, H.~Johansson and D.~A.~Kosower,
+  ``Maximally supersymmetric planar Yang-Mills amplitudes at five loops,''
+  Phys.\ Rev.\ D {\bf 76} (2007) 125020
+  [arXiv:0705.1864 [hep-th]].
+  \bibitem{anomaly}
+    {\bf J.~J.~M.~Carrasco}, R.~Kallosh, R.~Roiban and A.~A.~Tseytlin,
+  ``On the U(1) duality anomaly and the S-matrix of ${\mathcal{N}}=4$ supergravity,''
+  JHEP {\bf 1307} (2013) 029
+  [arXiv:1303.6219 [hep-th]].
+  %%CITATION = ARXIV:1303.6219;%%
+  %6 citations counted in INSPIRE as of 24 Mar 2014
+  \bibitem{divNeqFour}
+  Z.~Bern, S.~Davies, T.~Dennen, A.~V.~Smirnov and V.~A.~Smirnov,
+  ``The Ultraviolet Properties of N=4 Supergravity at Four Loops,''
+  Phys.\ Rev.\ Lett.\  {\bf 111} (2013) 231302
+  [arXiv:1309.2498 [hep-th]].
+  %%CITATION = ARXIV:1309.2498;%%
+  %8 citations counted in INSPIRE as of 24 Mar 2014
+\bibitem{shock}
+  R.~Saotome and R.~Akhoury,
+  ``Relationship Between Gravity and Gauge Scattering in the High Energy Limit,''
+  JHEP {\bf 1301} (2013) 123
+   [JHEP {\bf 1301} (2013) 123]
+  [arXiv:1210.8111 [hep-th]].
+  %%CITATION = ARXIV:1210.8111;%%
+  %9 citations counted in INSPIRE as of 24 Mar 2014
+\bibitem{flavorGames}
+  T.~Melia,
+  ``Getting more flavour out of one-flavour QCD,''
+  arXiv:1312.0599 [hep-ph].
+  %%CITATION = ARXIV:1312.0599;%%
+ 
+\bibitem{eftOfLSS}
+   {\bf J.~J.~M.~Carrasco}, M.~P.~Hertzberg and L.~Senatore,
+  ``The Effective Field Theory of Cosmological Large Scale Structures,''
+  JHEP {\bf 1209} (2012) 082
+  [arXiv:1206.2926 [astro-ph.CO]].
+    {\bf J.~J.~M.~Carrasco}, S.~Foreman, D.~Green and L.~Senatore,
+  ``The 2-loop matter power spectrum and the IR-safe integrand,''
+  arXiv:1304.4946 [astro-ph.CO].     {\bf J.~J.~M.~Carrasco}, S.~Foreman, D.~Green and L.~Senatore,
+  ``The Effective Field Theory of Large Scale Structures at Two Loops,''
+  arXiv:1310.0464 [astro-ph.CO].
+
+\iffalse
+\bibitem{Carrasco:2011mn}
+  J.~J.~.Carrasco and H.~Johansson,
+  ``Five-Point Amplitudes in ${\mathcal{N}}=4$ Super-Yang-Mills Theory and ${\mathcal{N}}=8$ Supergravity,''
+  Phys.\ Rev.\ D {\bf 85} (2012) 025006
+  [arXiv:1106.4711 [hep-th]].
+  %%CITATION = ARXIV:1106.4711;%%
+  %54 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Broedel:2011pd}
+\bibitem{Broedel:2011pd}
+  J.~Broedel and J.~J.~M.~Carrasco,
+  ``Virtuous Trees at Five and Six Points for Yang-Mills and Gravity,''
+  Phys.\ Rev.\ D {\bf 84} (2011) 085009
+  [arXiv:1107.4802 [hep-th]].
+  %%CITATION = ARXIV:1107.4802;%%
+  %16 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Carrasco:2011jv}
+\bibitem{Carrasco:2011jv}
+  J.~J.~M.~Carrasco, R.~Kallosh and R.~Roiban,
+  ``Covariant procedures for perturbative non-linear deformation of duality-invariant theories,''
+  Phys.\ Rev.\ D {\bf 85} (2012) 025007
+  [arXiv:1108.4390 [hep-th]].
+  %%CITATION = ARXIV:1108.4390;%%
+  %21 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Bern:2012uf}
+\bibitem{Bern:2012uf}
+  Z.~Bern, J.~J.~M.~Carrasco, L.~J.~Dixon, H.~Johansson and R.~Roiban,
+  ``Simplifying Multiloop Integrands and Ultraviolet Divergences of Gauge Theory and Gravity Amplitudes,''
+  Phys.\ Rev.\ D {\bf 85} (2012) 105014
+  [arXiv:1201.5366 [hep-th]].
+  %%CITATION = ARXIV:1201.5366;%%
+  %40 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Broedel:2012gf}
+\bibitem{Broedel:2012gf}
+  J.~Broedel, J.~J.~M.~Carrasco, S.~Ferrara, R.~Kallosh and R.~Roiban,
+  ``${\mathcal{N}}=2$ Supersymmetry and U(1)-Duality,''
+  Phys.\ Rev.\ D {\bf 85} (2012) 125036
+  [arXiv:1202.0014 [hep-th]].
+  %%CITATION = ARXIV:1202.0014;%%
+  %15 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Carrasco:2012cv}
+\bibitem{eftOfLSS}
+  J.~J.~M.~Carrasco, M.~P.~Hertzberg and L.~Senatore,
+  ``The Effective Field Theory of Cosmological Large Scale Structures,''
+  JHEP {\bf 1209} (2012) 082
+  [arXiv:1206.2926 [astro-ph.CO]].
+  J.~J.~M.~Carrasco, S.~Foreman, D.~Green and L.~Senatore,
+  ``The 2-loop matter power spectrum and the IR-safe integrand,''
+  arXiv:1304.4946 [astro-ph.CO].   J.~J.~M.~Carrasco, S.~Foreman, D.~Green and L.~Senatore,
+  ``The Effective Field Theory of Large Scale Structures at Two Loops,''
+  arXiv:1310.0464 [astro-ph.CO].
+%\cite{Bern:2012di}
+\bibitem{Bern:2012di}
+  Z.~Bern, J.~J.~Carrasco, L.~J.~Dixon, M.~R.~Douglas, M.~von Hippel and H.~Johansson,
+  ``D = 5 maximally supersymmetric Yang-Mills theory diverges at six loops,''
+  Phys.\ Rev.\ D {\bf 87} (2013) 025018
+  [arXiv:1210.7709 [hep-th]].
+  %%CITATION = ARXIV:1210.7709;%%
+  %21 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Carrasco:2013qia}
+\bibitem{Carrasco:2013qia}
+  J.~J.~M.~Carrasco and R.~Kallosh,
+  ``Hidden Supersymmetry May Imply Duality Invariance,''
+  arXiv:1303.5663 [hep-th].
+  %%CITATION = ARXIV:1303.5663;%%
+  %3 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Carrasco:2013ypa}
+\bibitem{Carrasco:2013ypa}
+  J.~J.~M.~Carrasco, R.~Kallosh, R.~Roiban and A.~A.~Tseytlin,
+  ``On the U(1) duality anomaly and the S-matrix of ${\mathcal{N}}=4$ supergravity,''
+  JHEP {\bf 1307} (2013) 029
+  [arXiv:1303.6219 [hep-th]].
+  %%CITATION = ARXIV:1303.6219;%%
+  %6 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Carrasco:2013sva}
+\bibitem{Carrasco:2013sva}
+  J.~J.~M.~Carrasco, S.~Foreman, D.~Green and L.~Senatore,
+  ``The 2-loop matter power spectrum and the IR-safe integrand,''
+  arXiv:1304.4946 [astro-ph.CO].
+  %%CITATION = ARXIV:1304.4946;%%
+  %10 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Carrasco:2013mua}
+\bibitem{Carrasco:2013mua}
+  J.~J.~M.~Carrasco, S.~Foreman, D.~Green and L.~Senatore,
+  ``The Effective Field Theory of Large Scale Structures at Two Loops,''
+  arXiv:1310.0464 [astro-ph.CO].
+  %%CITATION = ARXIV:1310.0464;%%
+  %5 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Carrasco:2013hua}
+\bibitem{Carrasco:2013hua}
+  J.~J.~M.~Carrasco, W.~Chemissany and R.~Kallosh,
+  ``Journeys Through Antigravity?,''
+  JHEP {\bf 1401} (2014) 130
+  [arXiv:1311.3671 [hep-th]].
+  %%CITATION = ARXIV:1311.3671;%%
+  %6 citations counted in INSPIRE as of 24 Mar 2014
+\fi
+
+\end{thebibliography}
+
+
+
+
+
+\def\jjmc{jjmc}
+
+\clearpage
+\noindent{\bf Section b: Curriculum vitae} (max. 2 pages)\\
+
+\noindent{\bf PERSONAL INFORMATION}\\
+
+\noindent Carrasco, John Joseph\\
+\noindent Researcher unique identifier(s): 0000-0002-4499-8488 (ORCID-ID)\\
+\noindent ~ \hskip2cm J.J.M.Carrasco.1 (InspireHEP)\\
+\noindent Date of birth: 19-11-1975\\
+\noindent URL for web site: http:/www.stanford.edu/\textasciitilde\jjmc\\
+
+
+\begin{itemize}[leftmargin=*]
+\item  \hskip1cm  EDUCATION
+\begin{itemize}[label={},leftmargin=-.4cm]
+\item 2010 	\hskip.5cm Ph.D., Department of Physics, University of California at Los Angeles, USA
+\item 2007 	\hskip.5cm Masters, Department of Physics, University of California at Los Angeles, USA
+\item 2005 	\hskip.5cm Bachelors of Science, Department of Physics, Caltech, USA
+\end{itemize}
+~\\
+\item \hskip1cm  CURRENT POSITION
+\begin{itemize}[label={},leftmargin=-.4cm]
+\item 2012  -- {\em current} \hskip.5cm Research Associate (  Academic Research Staff )\\
+	Stanford Institute for Theoretical Physics \& Department of Physics, Stanford University, USA
+\end{itemize}
+~\\
+\item	\hskip1cm PREVIOUS POSITIONS
+\begin{itemize}[label={},leftmargin=-.4cm]
+\item 2010 --  2012 \hskip.5cm	Postdoctoral Scholar \\
+	Stanford Institute for Theoretical Physics \& Department of Physics, Stanford University, USA
+\item 2002--2004 \hskip.5cm Research Scientist \& Founding Member of Overture Research/Yahoo! Labs\footnote{Part-time after 1/04 while attending Caltech.}.
+\item 1998--2002 \hskip.5cm Engineer, Overture Services/Goto.com.
+\item 1997~~~~~~  \hskip1.5cm  Developer, Jobtrak Corporation.
+\end{itemize}
+~\\
+\item \hskip 1cm FELLOWSHIPS AND AWARDS
+\begin{itemize}[label={},leftmargin=-.4cm]
+\item 2012--2015 \hskip .5cm John F. Templeton Grant, Co-leader with Renata Kallosh, $\$\,600,000$.
+\item 2010--2013 \hskip.5cm Stanford Institute for Theoretical Physics, Postdoctoral Research Fellow.
+\item 2007--2010 \hskip.5cm Guy Weyl Physics Graduate Research Fellowship, UCLA.
+\end{itemize}
+~\\
+\item \hskip1cm	SUPERVISION OF GRADUATE STUDENTS AND POSTDOCTORAL FELLOWS
+\begin{itemize}[label={},leftmargin=-.4cm]
+\item 2012--{\it current} \hskip .5cm Co-supervision of 1 Ph.D. Student\\
+Stanford Institute for Theoretical Physics \& Department of Physics, Stanford University, USA
+\end{itemize}
+~\\
+\item \hskip1cm	TEACHING ACTIVITIES
+\begin{itemize}[label={},leftmargin=-.4cm]
+\item 2014 \hskip .5cm  TASI 2014, 3 $\times$ 90 minute  lectures,   {Journeys through the Precision Frontier: Amplitudes for Colliders,}  {\em (Upcoming)}.
+\item 2012 \hskip .5cm 2012 Arnold Sommerfeld School, 4 $\times$ 90 minute lectures, New Methods for Field Theory Amplitudes, Sep 2012.
+\item 2007 \hskip.5cm Teaching Associate,  Electrodynamics II, UCLA. Prof.~Vladimir Vassiliev  (Ph 110b)
+\item 2007 \hskip.5cm Teaching Associate, Optics \& Lasers, UCLA. Prof.~Kumar Patel (Ph 108)
+\item 2007 \hskip.5cm  Teaching Associate, Acoustics \& Fluids, UCLA. Prof.~Seth Putterman (Ph 114)
+\item 2006 \hskip.5cm  Teaching Assistant, Electrodynamics II, UCLA. Prof.~James Rosenzweig (Ph 110b)
+\item 2006 \hskip.5cm  Teaching Assistant,  Electrodynamics I, UCLA. Prof.~James Rosenzweig (Ph 110a)
+
+\end{itemize}
+~\\
+\item \hskip1cm	ORGANISATION OF SCIENTIFIC MEETINGS
+\begin{itemize}[label={},leftmargin=-.4cm]
+\item Co-organizer: Amplitudes, looking towards the future,  SITP, March 2013, JTF grant funded, USA.
+\item Organizer: Color-kinematics, Loops $\ldots\infty$?,  SITP, Feb 2011, SITP funded, USA.
+\end{itemize}
+~\\
+\item \hskip1cm INSTITUTIONAL RESPONSIBILITIES (if applicable)
+\begin{itemize}[label={},leftmargin=-.4cm]
+\item 2014 - {\it current} \hskip.5cm  Organizer of the Theory Seminar, SITP, Stanford, USA.
+\item 2012 - 2013 \hskip1.cm   Organizer of Postdoctoral Offices, SITP, Stanford, USA.
+\end{itemize}
+%200? ? 200? 	Member of a Committee; role, Name of University/ Institution/ Country
+%
+%
+%?	COMMISSIONS OF TRUST (if applicable)
+%
+%201? ? 	Scientific Advisory Board, Name of University/ Institution/ Country
+%201? ? 	Review Board, Name of University/ Institution/ Country
+%201? ?	Review panel member, Name of University/ Institution/ Country
+%201? ? 	Editorial Board, Name of University/ Institution/ Country
+%200? ? 	Scientific Advisory Board, Name of University/ Institution/ Country
+%200? ?	Reviewer, Name of University/ Institution/ Country 
+%200? ?	Scientific Evaluation, Name of University/ Institution/ Country
+%200? ?	Evaluator, Name of University/ Institution/ Country
+%
+%
+%?	MEMBERSHIPS OF SCIENTIFIC SOCIETIES (if applicable)
+%
+%201? ?	Member, Research Network ?Name of Research Network?
+%200? ?	Associated Member, Name of Faculty/ Department/Centre, Name of University/ Institution/ Country
+%200? ?	Funding Member, Name of Faculty/ Department/Centre, Name of University/ Institution/ Country 
+%
+%
+%?	MAJOR COLLABORATIONS (if applicable)
+%
+%Name of collaborators, Topic, Name of Faculty/ Department/Centre, Name of University/ Institution/ Country
+% 
+%
+%?	CAREER BREAKS (if applicable)
+%
+%Exact dates	Please indicate the reason and the duration in months.
+
+\end{itemize}\newpage
+
+\vspace{27pt}
+\begin{center}
+\textit{\textbf{Appendix: All ongoing and submitted grants and funding of the PI 
+(Funding ID)}}
+
+\vspace{1pt}
+\textit{\emph{Mandatory information}}\textit{ (does not count towards page limits)}
+\end{center}
+
+\vspace{14pt}
+\baselineskip=13pt
+\leftskip=7pt
+\parindent=0pt
+\textbf{On-going Grants}
+
+\vspace{1pt}
+\begin{tabular}{|>{\raggedright}p{50pt}|>{\raggedright}p{60pt}|>{\raggedright}p{50pt}|>{\raggedright}p{60pt}|>{\raggedright}p{100pt}|>{\raggedright}p{59pt}|}
+\hline
+\textit{Project Title} & \textit{Funding source} & \textit{Amount}\linebreak{}
+\textit{(Euros)} & \textit{Period} & \textit{Role of the PI} & \textit{Relation 
+to current }\linebreak{}
+\textit{ERC proposal}\tabularnewline
+\hline
+ Quantum Gravity Frontiers& John Templeton Foundation & 433558  & 09/2012 - 09/2015(*)  & Co-Pi with Renata Kallosh. This funds my current salary and  visitor program.  Responsible for quarterly project reports, and biannual budget reports. & Precursor to ERC proposal -- sets the stage. \tabularnewline
+\hline
+\end{tabular}
+
+(*) My funding through JTF will end when I cease employment at Stanford and join CEA-Saclay on 01/2015 if I am awarded this ERC grant.  The non-perturbative aspects of that grant may remain active at Stanford without my being funded.
+
+\newcommand{\citez}[1]{{\bf{[#1 cites.]}}}
+
+\vspace{14pt}
+\leftskip=7pt
+\textbf{Applications}
+
+\vspace{1pt}
+\begin{tabular}{|>{\raggedright}p{35pt}|>{\raggedright}p{45pt}|>{\raggedright}p{38pt}|>{\raggedright}p{38pt}|>{\raggedright}p{54pt}|>{\raggedright}p{59pt}|}
+\hline
+\textit{Project Title} & \textit{Funding source} & \textit{Amount}\linebreak{}
+\textit{(Euros)} & \textit{Period} & \textit{Role of the PI} & \textit{Relation 
+to current }\linebreak{}
+\textit{ERC proposal}\tabularnewline
+\hline
+ &  &  &  &  & \tabularnewline
+\hline
+\end{tabular}
+\vfill
+\pagebreak
+
+\vspace{14pt}
+\textbf{Section c:  Early achievements track-record} (max. 2 pages)\\
+~\\
+{\it h}-index: 19, total-citations:  1542, avg-citations/paper: 53.2\\
+(according to {\tt inspirehep.net} as of 24 March 2014)\\
+~\\
+All citation counts below  {\em without}  self-citations by any author.
+\begin{itemize}[leftmargin=*]
+\item    10 PUBLICATIONS WITHOUT ADVISOR (without Zvi Bern)
+\begin{enumerate}
+%\cite{Carrasco:2011mn}
+\item \citez{%54-13=
+41} J.~J.~Carrasco and H.~Johansson,
+  ``Five-Point Amplitudes in N=4 Super-Yang-Mills Theory and N=8 Supergravity,''
+  Phys.\ Rev.\ D {\bf 85} (2012) 025006
+  [arXiv:1106.4711 [hep-th]].
+  %%CITATION = ARXIV:1106.4711;%%
+  %54 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Carrasco:2011hw}
+\item \citez{%41-9=
+32}
+  J.~J.~M.~Carrasco and H.~Johansson,
+  ``Generic multiloop methods and application to N=4 super-Yang-Mills,''
+  J.\ Phys.\ A {\bf 44} (2011) 454004
+  [arXiv:1103.3298 [hep-th]].
+  %%CITATION = ARXIV:1103.3298;%%
+  %41 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Carrasco:2012cv}
+\item \citez{%29 -5 =
+24}
+  J.~J.~M.~Carrasco, M.~P.~Hertzberg and L.~Senatore,
+  ``The Effective Field Theory of Cosmological Large Scale Structures,''
+  JHEP {\bf 1209} (2012) 082
+  [arXiv:1206.2926 [astro-ph.CO]].
+  %%CITATION = ARXIV:1206.2926;%%
+  %29 citations counted in INSPIRE as of 24 Mar 2014
+\item  \citez{%18-2=
+16}
+  J.~J.~M.~Carrasco, M.~Chiodaroli, M.~Gunaydin and R.~Roiban,
+  ``One-loop four-point amplitudes in pure and matter-coupled N $\le$ 4 supergravity,''
+  JHEP {\bf 1303} (2013) 056
+  [arXiv:1212.1146 [hep-th]].
+  %%CITATION = ARXIV:1212.1146;%%
+  %18 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Broedel:2011pd}
+\item \citez{%16-4=
+12}
+  J.~Broedel and J.~J.~M.~Carrasco,
+  ``Virtuous Trees at Five and Six Points for Yang-Mills and Gravity,''
+  Phys.\ Rev.\ D {\bf 84} (2011) 085009
+  [arXiv:1107.4802 [hep-th]].
+  %%CITATION = ARXIV:1107.4802;%%
+  %16 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Broedel:2012gf}
+\item  \citez{%21-10=
+11}
+  J.~J.~M.~Carrasco, R.~Kallosh and R.~Roiban,
+  ``Covariant procedures for perturbative non-linear deformation of duality-invariant theories,''
+  Phys.\ Rev.\ D {\bf 85} (2012) 025007
+  [arXiv:1108.4390 [hep-th]].
+  %%CITATION = ARXIV:1108.4390;%%
+  %21 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Carrasco:2012ca}
+%\item  \citez{%10-2=
+%8}
+ % J.~J.~M.~Carrasco, S.~Foreman, D.~Green and L.~Senatore,
+ % ``The 2-loop matter power spectrum and the IR-safe integrand,'' Preparing for submission to JHEP.   arXiv:1304.4946 [astro-ph.CO].
+  %%CITATION = ARXIV:1304.4946;%%
+  %10 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Carrasco:2013ypa}
+\item  \citez{6}
+  J.~J.~M.~Carrasco, R.~Kallosh, R.~Roiban and A.~A.~Tseytlin,
+  ``On the U(1) duality anomaly and the S-matrix of N=4 supergravity,''
+  JHEP {\bf 1307} (2013) 029
+  [arXiv:1303.6219 [hep-th]].
+  %%CITATION = ARXIV:1303.6219;%%
+  %6 citations counted in INSPIRE as of 24 Mar 2014
+\item \citez{%15-10=
+5}
+  J.~Broedel, J.~J.~M.~Carrasco, S.~Ferrara, R.~Kallosh and R.~Roiban,
+  ``N=2 Supersymmetry and U(1)-Duality,''
+  Phys.\ Rev.\ D {\bf 85} (2012) 125036
+  [arXiv:1202.0014 [hep-th]].
+  %%CITATION = ARXIV:1202.0014;%%
+  %15 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Carrasco:2013sva}
+\item \citez{%6-1=
+5}
+  J.~J.~M.~Carrasco, W.~Chemissany and R.~Kallosh,
+  ``Journeys Through Antigravity?,''
+  JHEP {\bf 1401} (2014) 130
+  [arXiv:1311.3671 [hep-th]].
+  %%CITATION = ARXIV:1311.3671;%%
+  %6 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Carrasco:2013mua}
+\item \citez{5}
+  J.~J.~M.~Carrasco, S.~Foreman, D.~Green and L.~Senatore,
+  ``The Effective Field Theory of Large Scale Structures at Two Loops,''
+  Submitted to JCAP. arXiv:1310.0464 [astro-ph.CO].
+  %%CITATION = ARXIV:1310.0464;%%
+  %5 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Carrasco:2013qia}
+
+\end{enumerate}
+~\\
+\item    5 TOP-CITED PUBLICATIONS 
+\begin{enumerate}
+%\cite{Bern:2008qj}
+\item \citez{%220-33=
+187}
+  Z.~Bern, J.~J.~M.~Carrasco and H.~Johansson,
+  ``New Relations for Gauge-Theory Amplitudes,''
+  Phys.\ Rev.\ D {\bf 78} (2008) 085011
+  [arXiv:0805.3993 [hep-ph]].
+  %%CITATION = ARXIV:0805.3993;%%
+  %220 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Bern:2007hh}
+\item \citez{%177-37=
+140}
+  Z.~Bern, J.~J.~Carrasco, L.~J.~Dixon, H.~Johansson, D.~A.~Kosower and R.~Roiban,
+  ``Three-Loop Superfiniteness of N=8 Supergravity,''
+  Phys.\ Rev.\ Lett.\  {\bf 98} (2007) 161303
+  [hep-th/0702112].
+  %%CITATION = HEP-TH/0702112;%%
+  %177 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Bern:2009kd}
+\item \citez{%141-26=
+115}
+  Z.~Bern, J.~J.~Carrasco, L.~J.~Dixon, H.~Johansson and R.~Roiban,
+  ``The Ultraviolet Behavior of N=8 Supergravity at Four Loops,''
+  Phys.\ Rev.\ Lett.\  {\bf 103} (2009) 081301
+  [arXiv:0905.2326 [hep-th]].
+  %%CITATION = ARXIV:0905.2326;%%
+  %141 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Bern:2007ct}
+\item \citez{%130-24=
+106}
+  Z.~Bern, J.~J.~M.~Carrasco, H.~Johansson and D.~A.~Kosower,
+  ``Maximally supersymmetric planar Yang-Mills amplitudes at five loops,''
+  Phys.\ Rev.\ D {\bf 76} (2007) 125020
+  [arXiv:0705.1864 [hep-th]].
+  %%CITATION = ARXIV:0705.1864;%%
+  %130 citations counted in INSPIRE as of 24 Mar 2014
+%\cite{Bern:2010ue}
+\item \citez{%129-29=
+100}
+  Z.~Bern, J.~J.~M.~Carrasco and H.~Johansson,
+  ``Perturbative Quantum Gravity as a Double Copy of Gauge Theory,''
+  Phys.\ Rev.\ Lett.\  {\bf 105} (2010) 061602
+  [arXiv:1004.0476 [hep-th]].
+  %%CITATION = ARXIV:1004.0476;%%
+  %129 citations counted in INSPIRE as of 24 Mar 2014
+%%\cite{Bern:2008pv}
+%\item \citez{111}
+%  Z.~Bern, J.~J.~M.~Carrasco, L.~J.~Dixon, H.~Johansson and R.~Roiban,
+%  ``Manifest Ultraviolet Behavior for the Three-Loop Four-Point Amplitude of N=8 Supergravity,''
+%  Phys.\ Rev.\ D {\bf 78} (2008) 105019
+%  [arXiv:0808.4112 [hep-th]].
+%  %%CITATION = ARXIV:0808.4112;%%
+%  %111 citations counted in INSPIRE as of 24 Mar 2014
+%%\cite{Bern:2007xj}
+%\item \citez{83}
+%  Z.~Bern, J.~J.~Carrasco, D.~Forde, H.~Ita and H.~Johansson,
+%  ``Unexpected Cancellations in Gravity Theories,''
+%  Phys.\ Rev.\ D {\bf 77} (2008) 025010
+%  [arXiv:0707.1035 [hep-th]].
+%  %%CITATION = ARXIV:0707.1035;%%
+%  %82 citations counted in INSPIRE as of 24 Mar 2014
+%%\cite{Bern:2010tq}
+%\item \citez{57}
+%  Z.~Bern, J.~J.~M.~Carrasco, L.~J.~Dixon, H.~Johansson and R.~Roiban,
+%  ``The Complete Four-Loop Four-Point Amplitude in N=4 Super-Yang-Mills Theory,''
+%  Phys.\ Rev.\ D {\bf 82} (2010) 125040
+%  [arXiv:1008.3327 [hep-th]].
+%  %%CITATION = ARXIV:1008.3327;%%
+%  %57 citations counted in INSPIRE as of 24 Mar 2014
+%%\cite{Bern:2010qa}
+%\item \citez{47}
+%  Z.~Bern, J.~J.~Carrasco, T.~Dennen, Y.~-t.~Huang and H.~Ita,
+%  ``Generalized Unitarity and Six-Dimensional Helicity,''
+%  Phys.\ Rev.\ D {\bf 83} (2011) 085022
+%  [arXiv:1010.0494 [hep-th]].
+%  %%CITATION = ARXIV:1010.0494;%%
+%  %47 citations counted in INSPIRE as of 24 Mar 2014
+%%\cite{Bern:2009xq}
+%\item \citez{41}
+%  Z.~Bern, J.~J.~M.~Carrasco, H.~Ita, H.~Johansson and R.~Roiban,
+%  ``On the Structure of Supersymmetric Sums in Multi-Loop Unitarity Cuts,''
+%  Phys.\ Rev.\ D {\bf 80} (2009) 065029
+%  [arXiv:0903.5348 [hep-th]].
+%  %%CITATION = ARXIV:0903.5348;%%
+%  %41 citations counted in INSPIRE as of 24 Mar 2014
+%%\cite{Bern:2012uf}
+%\item \citez{40}
+%  Z.~Bern, J.~J.~M.~Carrasco, L.~J.~Dixon, H.~Johansson and R.~Roiban,
+%  ``Simplifying Multiloop Integrands and Ultraviolet Divergences of Gauge Theory and Gravity Amplitudes,''
+%  Phys.\ Rev.\ D {\bf 85} (2012) 105014
+%  [arXiv:1201.5366 [hep-th]].
+%  %%CITATION = ARXIV:1201.5366;%%
+%  %40 citations counted in INSPIRE as of 24 Mar 2014
+%%\cite{Bern:2009kf}
+%\item \citez{32}
+%  Z.~Bern, J.~J.~Carrasco, L.~J.~Dixon, H.~Johansson and R.~Roiban,
+%  ``Amplitudes and Ultraviolet Behavior of N = 8 Supergravity,''
+%  Fortsch.\ Phys.\  {\bf 59} (2011) 561
+%  [arXiv:1103.1848 [hep-th]].
+%  %%CITATION = ARXIV:1103.1848;%%
+%  %32 citations counted in INSPIRE as of 24 Mar 2014
+%%\cite{Bern:2012di}
+%\item \citez{21}
+%  Z.~Bern, J.~J.~Carrasco, L.~J.~Dixon, M.~R.~Douglas, M.~von Hippel and H.~Johansson,
+%  ``D = 5 maximally supersymmetric Yang-Mills theory diverges at six loops,''
+%  Phys.\ Rev.\ D {\bf 87} (2013) 025018
+%  [arXiv:1210.7709 [hep-th]].
+%  %%CITATION = ARXIV:1210.7709;%%
+%  %21 citations counted in INSPIRE as of 24 Mar 2014
+%%\cite{Bern:2010fy}
+%\item \citez{12}
+%  Z.~Bern, J.~J.~M.~Carrasco, H.~Johansson and R.~Roiban,
+%  ``The Five-Loop Four-Point Amplitude of N=4 super-Yang-Mills Theory,''
+%  Phys.\ Rev.\ Lett.\  {\bf 109} (2012) 241602
+%  [arXiv:1207.6666 [hep-th]].
+%  %%CITATION = ARXIV:1207.6666;%%
+%  %12 citations counted in INSPIRE as of 24 Mar 2014
+\end{enumerate}
+~\\ 
+\newpage
+\item PATENTS
+\begin{enumerate}
+\item {
+Disambiguation of Search Queries (US Patent No. $7\,225\,184$)}
+\item {
+System and method for rapid completion of data processing tasks
+distributed on a network (US Patent No. $6\,775\,831$)}
+\end{enumerate}
+~\\
+\item INVITED LECTURES AT SCHOOLS:
+\begin{enumerate}
+\item {\href{http://phys.colorado.edu/summer-intensive-programs/tasi-2014-journeys-through-precision-frontier-amplitudes-colliders}{\large TASI 2014}, 3 $\times$ 90 minute  lectures,   {Journeys through the Precision Frontier: Amplitudes for Colliders,} June 2014. (UPCOMING)}
+\item {\href{http://www.theorie.physik.uni-muenchen.de/activities/schools/archiv/2012_asc_school/index.html}{\large 2012 Arnold Sommerfeld School}, 4 $\times$ 90 minute lectures, New Methods for Field Theory Amplitudes, Sep 2012.} 
+\end{enumerate}
+~\\
+\item SELECTED INVITED PRESENTATIONS AT INTERNATIONAL CONFERENCES:
+\begin{enumerate}
+%\item {\href{http://www.sns.ias.edu/~baldauf/EFTofLSS/program.html}{EFT of Large Scale Structure}, PCTS Princeton, February  2014.}
+\item {\href{http://scgp.stonybrook.edu/archives/7136}{The Geometry and Physics of Scattering Amplitudes}, SCGP/Stonybrook, December 2013.}
+\item {\href{http://indico.cern.ch/conferenceTimeTable.py?confId=229656#20130717}{Strings, Amplitudes, and Branes,} CERN Theory Institute, July 2013.}
+\item {\href{http://wwwth.mpp.mpg.de/members/strings/amplitudes2013/amplitudes.html}{AMPLITUDES 2013}, Max-Planck-Institut fur Physik, April 2013.}
+%\item {\href{http://www.lnf.infn.it/theory/buds/index.php?r=site/page&view=timetable}{Breaking of supersymmetry and Ultraviolet  Divergences in extended Supergravity workshop}, Frascati, March 2013}.
+\item {\href{http://wwwth.mpp.mpg.de/members/strings/strings2012/strings_files/program/speakers.html}{STRINGS 2012}, Plenary Overview Talk (1 hr), LMU-Munich, Aug 2012}.  
+%\item{  \href{http://www.int.washington.edu/PROGRAMS/11-3/week2.html}{Advances in QCD: Effective Field Theory and Recursive Analytic Methods}, INT Program INT-11-3,
+%Institute for Nuclear Theory, Seattle WA, Sep 2011.}
+\item{  \href{https://indico.nbi.ku.dk/conferenceTimeTable.py?confId=295#20110830}{Strings, Gauge Theory, and the LHC}, Niels Bohr International Academy, Aug 2011.}
+\item { \href{http://online.itp.ucsb.edu/online/qcdscat11/carrasco/}{The Harmony of Scattering Amplitudes}, KITP, April 2011.}
+\item {
+  \href{http://www.strings.ph.qmul.ac.uk/~theory/Amplitudes2010/programme.htm}{AMPLITUDES 2010}, QMU, May 2010. }
+%\item {
+%%  %\href{http://www.perimeterinstitute.ca/Events/Integrability_in_Scattering_Amplitudes/}
+%%  {Integrability in Scattering Amplitudes, Part I}, Institute for Advanced Studies, Princeton, Apr 2010. }
+%%\item {
+%%  \href{http://www.perimeterinstitute.ca/en/Events/Asymptotic_Safety/Asymptotic_Safety_-_30_Years_Later/}{Asymptotic Safety - 30 Years Later}, Perimeter Institute for Theoretical Physics, Nov 2009. }
+%%\item {
+%%  \href{http://www.gravity.psu.edu/events/supergravity/index.shtml}{Supergravity versus Superstring Theory in the Ultraviolet}, Institute for Gravitation and
+%%the Cosmos, Penn. State, Aug 2009. }
+%%
+\item {\href{https://indico.nbi.ku.dk/conferenceOtherViews.py?confId=71&view=it&showDate=all&showSession=all&detailLevel=contribution}{Hidden Structures in Field Theory Amplitudes 2009}, Niels Bohr International Academy, Aug 2009. }
+%
+%\item {
+%\href{http://ipht.cea.fr/Images/Pisp/pvanhove/Paris08/}{Wonders of Gauge
+%theory and Supergravity}, IHP \& IPhT/Saclay, 2008. }
+%
+%\item { \href{http://igc.psu.edu/events/conferences/inaugural/}{Institute for Gravitation and
+%the Cosmos Inaugural Conference}, Penn. State, Aug 2007. }
+\end{enumerate}
+~\\
+\item RECENT HONORS/AWARDS
+\begin{enumerate}
+\item John F. Templeton Grant, Co-leader with Renata Kallosh, $\$600,000$ to be awarded over three years (2012-2015).
+\item Julian S. Schwinger Named Diploma, Erice International School of Subnuclear Physics (2011).
+\item Best Theoretical Physics Prize, Erice International School of Subnuclear Physics (2011).
+\item Stanford Institute for Theoretical Physics, Postdoctoral Research Scholar Fellowship (2010-2013).
+\item Guy Weyl UCLA Physics Graduate Fellowship (2007-2010).
+\item John S. Bell Named Diploma, Erice International School of Subnuclear Physics (2008).
+\item Best [open] Question Prize \footnote{re: economy of physical descriptions, c.f. the amount of information encoded in real numbers.}, Erice International School of Subnuclear Physics (2008).
+\end{enumerate}
+
+
+\end{itemize}
+\end{document}  
